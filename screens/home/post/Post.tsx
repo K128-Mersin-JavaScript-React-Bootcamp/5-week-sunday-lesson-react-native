@@ -18,7 +18,7 @@ type Props = {
 
 const Post = (props: Props) => {
   const handleGoToPostDetail = () => {
-    props.screenProps.navigation.push("NotFound");
+    props.screenProps.navigation.push("PostDetail");
   };
   return (
     <View>
