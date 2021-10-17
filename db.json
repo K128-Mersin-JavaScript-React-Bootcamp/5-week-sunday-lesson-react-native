@@ -1,0 +1,21 @@
+{
+  "currentUser": {
+      "name": "Ahmet AYAN",
+      "avatar": "https://picsum.photos/id/832/600/400" 
+  },
+  "posts": [
+    { "id": 1,
+      "user": {
+        "name": "Zafer AYAN",
+        "avatar": "https://picsum.photos/id/602/600/400" 
+      },
+      "image": "https://picsum.photos/id/972/600/400",
+      "location": "İstanbul, Turkey",
+      "likeCount":1007,
+      "description": "Fotoğrafıma bir bakın",
+      "commentCount": 30,
+      "time": "9 saat önce"
+    
+    }
+  ]
+}

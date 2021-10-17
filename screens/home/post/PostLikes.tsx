@@ -1,11 +1,15 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../../../components/Themed";
+import { Post } from "../HomeScreen";
 
-const PostLikes = () => {
+type Props = {
+  post: Post;
+};
+const PostLikes = (props: Props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>1002 beğenme</Text>
+      <Text style={styles.text}>{props.post.likeCount} beğenme</Text>
     </View>
   );
 };

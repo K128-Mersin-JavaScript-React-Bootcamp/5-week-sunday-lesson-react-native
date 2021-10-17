@@ -11,9 +11,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { View, Text } from "../../../components/Themed";
 import Colors from "../../../constants/Colors";
 import useColorScheme from "../../../hooks/useColorScheme";
+import { User } from "../HomeScreen";
 import ProfileImage from "./postHeader/ProfileImage";
 
-const PostAddComment = () => {
+type Props = {
+  currentUser: User;
+};
+const PostAddComment = (props: Props) => {
   const colorScheme = useColorScheme();
   const [comment, setComment] = useState("");
 
@@ -23,7 +27,7 @@ const PostAddComment = () => {
   };
   return (
     <View style={styles.container}>
-      <ProfileImage size={25} />
+      <ProfileImage size={25} uri={props.currentUser.avatar} />
       <TextInput
         style={stylesFn(colorScheme).input}
         placeholder="Yorum ekle..."

@@ -1,18 +1,14 @@
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, ImageURISource } from "react-native";
 import { Text, View } from "../../../../components/Themed";
 
 type Props = {
   size?: number;
+  uri: ImageURISource["uri"];
 };
 
 const ProfileImage = (props: Props) => {
-  return (
-    <Image
-      style={styles(props).profile}
-      source={{ uri: "https://picsum.photos/id/1081/100/100" }}
-    />
-  );
+  return <Image style={styles(props).profile} source={{ uri: props.uri }} />;
 };
 
 export default ProfileImage;

@@ -1,12 +1,16 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../../../components/Themed";
+import { Post } from "../HomeScreen";
 
-const PostDescription = () => {
+type Props = {
+  post: Post;
+};
+const PostDescription = (props: Props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>ozaferayan</Text>
-      <Text style={styles.comment}>Fotoğrafıma bir bakabilirsiniz.</Text>
+      <Text style={styles.name}>{props.post.user.name}</Text>
+      <Text style={styles.comment}>{props.post.description}</Text>
     </View>
   );
 };

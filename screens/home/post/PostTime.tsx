@@ -1,12 +1,16 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { View, Text } from "../../../components/Themed";
+import { Post } from "../HomeScreen";
 
-const PostTime = () => {
+type Props = {
+  post: Post;
+};
+const PostTime = (props: Props) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <Text style={styles.text}>9 saat önce</Text>
+        <Text style={styles.text}>{props.post.time}</Text>
       </TouchableOpacity>
       <TouchableOpacity>
         <Text style={styles.translate}>Çevirisine bak</Text>

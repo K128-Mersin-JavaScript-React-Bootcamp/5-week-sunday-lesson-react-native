@@ -1,12 +1,17 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, View } from "../../../../components/Themed";
+import { Post, User } from "../../HomeScreen";
 
-const ProfileNameAndLocation = () => {
+type Props = {
+  post: Post;
+};
+
+const ProfileNameAndLocation = (props: Props) => {
   return (
     <View style={styles.nameAndLocation}>
-      <Text style={styles.name}>ozaferayan</Text>
-      <Text style={styles.location}>İstanbul, Turkey</Text>
+      <Text style={styles.name}>{props.post.user.name}</Text>
+      <Text style={styles.location}>{props.post.location}</Text>
     </View>
   );
 };
