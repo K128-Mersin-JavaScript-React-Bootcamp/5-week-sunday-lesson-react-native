@@ -9,7 +9,7 @@ import Post from "./post/Post";
 export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
   return (
     <FlatList
-      data={["1"]}
+      data={["1", "2"]}
       renderItem={({ item }) => <Post item={item} />}
       keyExtractor={(item) => item}
     />

@@ -2,12 +2,14 @@ import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { Text, View } from "../../../../components/Themed";
 
-type Props = {};
+type Props = {
+  size: number | undefined;
+};
 
 const ProfileImage = (props: Props) => {
   return (
     <Image
-      style={styles.profile}
+      style={styles(props).profile}
       source={{ uri: "https://picsum.photos/id/1081/100/100" }}
     />
   );
@@ -15,10 +17,11 @@ const ProfileImage = (props: Props) => {
 
 export default ProfileImage;
 
-const styles = StyleSheet.create({
-  profile: {
-    borderRadius: 50,
-    width: 50,
-    height: 50,
-  },
-});
+const styles = (props: Props) =>
+  StyleSheet.create({
+    profile: {
+      borderRadius: 50,
+      width: props.size,
+      height: props.size,
+    },
+  });
