@@ -18,7 +18,7 @@ import { Text, View } from "../components/Themed";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import AddPostScreen from "../screens/AddPostScreen";
-import HomeScreen from "../screens/HomeScreen";
+import HomeScreen from "../screens/home/HomeScreen";
 import LikesScreen from "../screens/LikesScreen";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
