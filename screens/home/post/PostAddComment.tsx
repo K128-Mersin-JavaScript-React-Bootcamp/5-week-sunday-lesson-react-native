@@ -1,6 +1,12 @@
 import { FontAwesome } from "@expo/vector-icons";
-import React from "react";
-import { ColorSchemeName, StyleSheet, TextInput } from "react-native";
+import React, { useState } from "react";
+import {
+  ColorSchemeName,
+  NativeSyntheticEvent,
+  StyleSheet,
+  TextInput,
+  TextInputChangeEventData,
+} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { View, Text } from "../../../components/Themed";
 import Colors from "../../../constants/Colors";
@@ -9,18 +15,27 @@ import ProfileImage from "./postHeader/ProfileImage";
 
 const PostAddComment = () => {
   const colorScheme = useColorScheme();
+  const [comment, setComment] = useState("");
+
+  const handleEmojiPress = (emoji: string) => {
+    console.log(comment);
+    setComment(`${comment} ${emoji}`);
+  };
   return (
     <View style={styles.container}>
       <ProfileImage size={25} />
       <TextInput
         style={stylesFn(colorScheme).input}
         placeholder="Yorum ekle..."
+        defaultValue={comment}
+        value={comment}
+        onChangeText={setComment}
       />
       <View style={styles.emojis}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleEmojiPress("❤️")}>
           <Text style={{ marginRight: 8 }}>❤️</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleEmojiPress("🙌")}>
           <Text style={{ marginRight: 8 }}>🙌</Text>
         </TouchableOpacity>
         <TouchableOpacity>

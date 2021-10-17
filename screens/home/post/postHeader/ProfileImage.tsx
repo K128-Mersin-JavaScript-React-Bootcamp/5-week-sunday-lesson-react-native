@@ -3,7 +3,7 @@ import { StyleSheet, Image } from "react-native";
 import { Text, View } from "../../../../components/Themed";
 
 type Props = {
-  size: number | undefined;
+  size?: number;
 };
 
 const ProfileImage = (props: Props) => {
@@ -20,8 +20,8 @@ export default ProfileImage;
 const styles = (props: Props) =>
   StyleSheet.create({
     profile: {
-      borderRadius: 50,
-      width: props.size,
-      height: props.size,
+      borderRadius: props.size ? props.size : 50,
+      width: props.size ? props.size : 50,
+      height: props.size ? props.size : 50,
     },
   });

@@ -6,11 +6,11 @@ import { Text, View } from "../../components/Themed";
 import { RootTabScreenProps } from "../../types";
 import Post from "./post/Post";
 
-export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
+export default function HomeScreen(props: RootTabScreenProps<"Home">) {
   return (
     <FlatList
       data={["1", "2"]}
-      renderItem={({ item }) => <Post item={item} />}
+      renderItem={({ item }) => <Post item={item} screenProps={props} />}
       keyExtractor={(item) => item}
     />
   );

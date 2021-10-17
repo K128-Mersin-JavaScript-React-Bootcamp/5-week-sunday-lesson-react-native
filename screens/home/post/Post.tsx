@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, View } from "../../../components/Themed";
+import { RootTabScreenProps } from "../../../types";
 import PostActions from "./PostActions";
 import PostAddComment from "./PostAddComment";
 import PostComments from "./PostComments";
@@ -12,13 +13,17 @@ import PostTime from "./PostTime";
 
 type Props = {
   item: string | number;
+  screenProps: RootTabScreenProps<"Home">;
 };
 
 const Post = (props: Props) => {
+  const handleGoToPostDetail = () => {
+    props.screenProps.navigation.push("NotFound");
+  };
   return (
     <View>
       <PostHeader />
-      <PostImage />
+      <PostImage onHandlePostDetail={handleGoToPostDetail} />
       <PostActions />
       <PostLikes />
       <PostDescription />
